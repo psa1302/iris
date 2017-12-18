@@ -18,12 +18,16 @@ def load_data():
 def vectorized_result(j):
 
 	"""To vectorize the ouput."""
-	
+
 	z = np.zeros((3, 1))
 	z[int(j)] = 1.0
 	return z
 
 def load_data_wrapper():
+
+	"""Data modification for neural network. Converting the input into a 
+	column vector(4,1) and the output into a column vector(3,1)."""
+	
 	tr_d, va_d, te_d = load_data()
 	training_d = np.split(tr_d, [4], axis=1)
 	validation_d = np.split(va_d, [4], axis=1)
